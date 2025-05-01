@@ -17,7 +17,7 @@ I'm actually not quite interested in malware analysis, but you never know where 
 I try to teach myself how to manually unpack binaries and will document the process via short digestable lections that will hopefully be helpful to anyone.
 Along the way I will also explore the different techniques on how packer-authors try to keep little snoopy reversers from reversing their code (anti-debugging-techniques) and how to get around these techniques (anti-anti).
 My plan is to also develop my own simple packer to better understand the process of how a program is packed.
-Hopefully one day I will be able to unpack a real-life target that uses a Virtual Machine (VM) based packer as this seems to be where all the fun in these days :)
+Hopefully one day I will be able to unpack a real-life target that uses a Virtual Machine (VM) based packer as this seems to be where all the fun is these days :)
 
 ## Target audience
 
