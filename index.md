@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 ---
 
 This is the index page
