@@ -2,4 +2,10 @@
 layout: default
 ---
 
-This is the index page
+Lections:
+
+- Lection 1: What does it mean to be packed?
+
+* * *
+
+[About](./about.html).
