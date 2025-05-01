@@ -1,1 +1,6 @@
-First post
+---
+layout: post
+title: First Post
+---
+
+Content
