@@ -4,3 +4,5 @@ plugins:
 
 title: UnpackingNoobs
 description: It's unpacking with noobs
+
+show_downloads: false
