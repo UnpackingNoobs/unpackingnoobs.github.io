@@ -4,7 +4,7 @@ layout: default
 
 ### Lections:
 
-- Lection 1: What does it mean to be packed?
+- Lection 1: What does it mean to be packed? [Coming soon]
 
 * * *
 
