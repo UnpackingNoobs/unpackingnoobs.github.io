@@ -22,11 +22,26 @@ For now, let's just have a look at the two examples provided with the material f
 Open them up and compare them. Do they behave different? What are their file sizes, are the different?\
 You should come to the conclusion that both programs do exactly the same thing, they both ask you for the secret code (which is _123456_ by the way) and give you a Goodboy/Badboy message depending on what you've put in. But why is the packed version only half the size you might ask. Of course there can be many reasons for a different file size like a different compiler, compiler settings, runtime, programming language etc. but that's all not the case here.\
 To investigate further, we can open the two programs in a hex editor and search for the strings that are used, e.g. _'Please insert the secret code'_. For the _original.exe_ you should have no problems to locate the string in the file, but what's with the _packed.exe_? The strings are nowhere to be found.\
+
+![The strings can easily be found in the original.exe](/assets/lection_1/hexeditor.png)
+
 Next, open up your favorite debugger, load the two programs and let them run to the entry point of the program and compare the assembly. That's strange, they look completely different. Also, if you search for string references, you will find nothing for the _packed.exe_.
+
+![The entry point of original.exe](/assets/lection_1/ep_original.png)\
+![The entry point of packed.exe](/assets/lection_1/hexeditor.png)
+
 Now let the program run freely (F9/Play Button in x64dbg) and search for string references again. Well that's interesting - now there are strings. Where did they come from? It looks like they have been created at runtime.\
 Now compare the locations where the strings are used in the _original.exe_ and the _packed.exe_ - are they different? You should make the - maybe unexpected - observation that both programs use the exact same code, only the code seems to be located at a different address. How is this possible, just seconds ago it looked like we had two different programs and now they look absolutely identical?\
-Make one more observation by remembering the address of the _PUSH_ instruction that pushes the _'Please insert the...'_ string onto the stack (0x002558D6 for the original and 0x002F58D6), reset the program (but only run it up until the entry point) and than have a look at the remembered address (ctrl+G in x64dbg). For the _original.exe_ everything looks just fine, just as we expected it. But what's up with the _packed.exe_ ? The instructions look like garbage and there are bytes that are not even a valid instruction. Let the program run again (F9) and tell your debugger to re-analyze the code and ... boom, the valid code is back.\
-At this point it should be obvious that somewhere within the program the real instructions have been restored and were placed here. This gives us a first idea of what a packed program looks like and how is behaves: There seems to be some sort of magic code that is executed at the start of the program that will then somehow generate and execute the real program code thus making the program behave just like we would have executed the original version. 
+
+![The place where the strings are used](/assets/lection_1/code_unpacked.png)
+
+Make one more observation by remembering the address of the _PUSH_ instruction that pushes the _'Please insert the...'_ string onto the stack (0x002558D6 for original.exe and 0x002F58D6 for packed.exe), reset the program (but only run it up until the entry point) and than have a look at the remembered address (Ctrl+G in x64dbg). For the _original.exe_ everything looks just fine, just as we expected it. But what's up with the _packed.exe_ ? The instructions look like garbage and there are bytes that are not even a valid instruction. Let the program run again (F9) and tell your debugger to re-analyze the code and ... boom, the valid code is back.\
+
+![Scrambled data](/assets/lection_1/code_packed.png)
+
+At this point it should be obvious that somewhere within the program the real instructions have been restored and were placed here. This gives us a first idea of what a packed program looks like and how is behaves: There seems to be some sort of magic code that is executed at the start of the program that will then somehow generate and execute the real program code thus making the program behave just like we would have executed the original version.
+
+![A sketch on how a packed program works](/assets/lection_1/packer_simple.png)
 
 #### What have we observed so far?
 
