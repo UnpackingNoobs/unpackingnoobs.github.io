@@ -2,7 +2,7 @@
 layout: post
 author: UnpackingNoobs
 title: "Lection 1: What does it mean to be packed?"
-date: null
+date: 2025-05-02
 tags:
     - "Binary unpacking"
 ---
