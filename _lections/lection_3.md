@@ -56,26 +56,26 @@ typedef void (*FUNCPTR_t)(void);
 
 enum Methods
 {
-	ID_METHOD_0,
-	ID_METHOD_1,
-	ID_METHOD_2,
+    ID_METHOD_0,
+    ID_METHOD_1,
+    ID_METHOD_2,
 
-	NUM_METHODS
+    NUM_METHODS
 };
 
 FUNCPTR_t methods[NUM_METHODS];
 
 int main()
 {
-	// 'methods' gets initialized by someone else, similar to:
+    // 'methods' gets initialized by someone else, similar to:
     // methods[0] = &method0;
     // methods[1] = &method1;
     // methods[2] = &method2;
 
-	/* Indirect Call method 2 */
-	methods[ID_METHOD_2]();
+    /* Indirect Call method 2 */
+    methods[ID_METHOD_2]();
 
-	return 0;
+    return 0;
 }
 ```
 
@@ -105,7 +105,7 @@ To see this in action, load the _packed.exe_ in x64dbg, let it run until the OEP
 
 That's it. We have successfully unpacked, dumped and fixed our first executeable!<br/><br/>
 
-In the next lection we will find a solution to the following problem: If the OS only loads the packer IAT at program start, but the original IAT is still packed at that time, how can we ever end up with a fully loaded original IAT during runtime? Or in other word, how does the packer load the original IAT on its own?
+In the next lection we will find a solution to the following problem: If the OS only loads the packer IAT at program start, but the original IAT is still packed at that time, how can we ever end up with a fully loaded original IAT during runtime? Or in other words, how does the packer load the original IAT on its own?
 
 ### Conclusion
 
