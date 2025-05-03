@@ -11,3 +11,10 @@ layout: default
 * * *
 
 [About](./about.html)
+
+
+* * *
+
+### Appendix
+
+- [Definitions](/definitions)
