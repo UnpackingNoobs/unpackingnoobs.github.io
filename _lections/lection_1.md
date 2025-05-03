@@ -47,7 +47,7 @@ At this point it should be obvious that somewhere within the program the real in
 
 ![A sketch on how a packed program works]({{site.url}}/assets/lection_1/packer_simple.png)
 
-That's it for now for our first tiny step into the world of unpacking. In the next lection we will try to gain an understanding how we can put the _un_ in unpacking.
+That's it for now for our first tiny step into the world of unpacking. In the [next lection](/lections/lection_2) we will try to gain an understanding how we can put the _un_ in unpacking.
 
 ### What have we observed so far?
 
