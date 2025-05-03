@@ -17,7 +17,7 @@ tags:
 
 * The examples from the _[Lection1](https://github.com/UnpackingNoobs/Lection1)_ repo
 * A hex-editor of your choice
-* A debugger of your choice (preferrably x64dbg)
+* A debugger of your choice (preferrably [x64dbg](https://x64dbg.com/))
 
 # A first observation
 
@@ -29,7 +29,7 @@ To investigate further, we can open the two programs in a hex editor and search 
 
 ![The strings can easily be found in the original.exe]({{site.url}}/assets/lection_1/hexeditor.png)
 
-Next, open up your favorite debugger, load the two programs and let them run to the entry point of the program and compare the assembly. That's strange, they look completely different. Also, if you search for string references, you will find nothing for the _packed.exe_.
+Next, open up your favorite debugger, load the two programs and let them run to the entry point of the program and compare the assembly. That's strange, they look completely different. Also, if you search for string references, you will find nothing for the _packed.exe_. Moreover they seem to start at different addresses (0x004012C1 and 0x00420C80).
 
 ![The entry point of original.exe]({{site.url}}/assets/lection_1/ep_original.png)<br/><br/>
 ![The entry point of packed.exe]({{site.url}}/assets/lection_1/ep_packed.png)
