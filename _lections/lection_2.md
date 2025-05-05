@@ -60,7 +60,7 @@ Now load the dumped exe into the PE editor and have a look at the address of the
 But what are we missing then? Looks like more fixes need to be done in order to get a fully functional unpacked program. We will see the necessary third step in the next lection.<br/>
 But is there actually anything we can do at the moment? Well yes, you could already load the dumped exe to e.g. Ghidra and perform a static analysis of the code or have a look with the hex editor and search for promising strings.<br/><br/>
 
-That's it for now for our second tiny step into the world of unpacking. In the next lection we will try to make the dumped program run again.
+That's it for now for our second tiny step into the world of unpacking. In the [next lection](/lections/lection_3) we will try to make the dumped program run again.
 
 
 ### Conclusion
